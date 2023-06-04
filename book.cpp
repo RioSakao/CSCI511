@@ -59,6 +59,10 @@ void Book::disp(){
 int main() {
 
         ifstream target("01/book.txt");
+        if (!target) {
+            cerr << "Issue opeing the file" << endl;
+            return 1;
+        }
         string line, token;
         vector<Book> myvector; 
         Book book;
