@@ -15,9 +15,6 @@ class Book : public Media {
             string series;
         public:
             void display() const;
-            bool compare_subjects(const string &s) const;
-            bool compare_title(const string &s) const;
-            bool compare_cn(const string &s) const;
             bool compare_other(const string& s) const;
             Book(const string &s1, const string &s2, const string &s3,
                             const string &s4, const string &s5, const string &s6,
