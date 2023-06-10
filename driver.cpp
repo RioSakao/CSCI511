@@ -15,11 +15,10 @@ int main() {
             cout << "3) subject" << endl;
             cout << "4) other" << endl;
             cout << "5) exit" << endl;
-            cout << "Enter an option number:  ";
             cin >> input;
             if(input =="5")
                     return 0;
-            cout << "Enter keyphrase:  ";
+            cout << "Enter keyphrase: ";
             cin >> key;
             cout << endl;
 

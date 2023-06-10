@@ -11,27 +11,34 @@ Book::Book(const string &s1, const string &s2, const string &s3,
 }
 
 void Book::display() const{
-        cout << "============================" << endl;
-        cout << "=========== BOOK ===========" << endl;
-        cout << "============================" << endl;
+        cout << "==========================" << endl;
+        cout << "========== BOOK ==========" << endl;
+        cout << "==========================" << endl;
         cout << left;
-        cout << setw(20) << "call number: " << setw(20) << call_number << endl;
-        cout << setw(20) << "title: " << setw(20) << title << endl;
-        cout << setw(20) << "subjects: " << setw(20) << subjects << endl;
-        cout << setw(20) << "author: " << setw(20) << author << endl;
-        cout << setw(20) << "description: " << setw(20) << description << endl;
-        cout << setw(20) << "publisher: " << setw(20) << publisher << endl;
-        cout << setw(20) <<"city: " << setw(20) << city << endl;
-        cout << setw(20) << "year: " << setw(20) << year << endl;
-        cout << setw(20) << "series: " << setw(20) << series << endl;
-        cout << setw(20) << "notes: " << setw(20) << notes << endl;
+        cout << setw(22) << "call_number: " << call_number << endl;
+        cout << setw(22) << "title: " <<  title << endl;
+        cout << setw(22) << "subjects: " <<  subjects << endl;
+        cout << setw(22) << "author: " <<  author << endl;
+        cout << setw(22) << "description: " <<  description << endl;
+        cout << setw(22) << "publisher: " <<  publisher << endl;
+        cout << setw(22) << "city: " <<  city << endl;
+        cout << setw(22) << "year: " <<  year << endl;
+        cout << setw(22) << "series: " <<  series << endl;
+        cout << setw(22) << "notes: " <<  notes << endl;
 
 }
 
 
 bool Book::compare_other(const string& s) const{
-            if(s==author || s==description || s==publisher || s==city || s==year || s==series) {
-                    return true;
-            }
-            return false;
+        int found_a = s.find(author);
+        int found_des = s.find(description);
+        int found_pub = s.find(publisher);
+        int found_ci = s.find(city);
+        int found_ye = s.find(year);
+        int found_se = s.find(series);
+        if(found_a!=string::npos || found_des!=string::npos ||found_pub!=string::npos 
+                        ||found_ci!=string::npos || found_ye!=string::npos || found_se!=string::npos) {
+                return true;
+        }
+        return false;
 }

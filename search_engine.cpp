@@ -55,7 +55,6 @@ vector<Media*> Search_engine::cn_search(const string &s){
 Search_engine::Search_engine(){
         
         string line;
-        string token, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12;
 
         ifstream btxt;
         btxt.open("book.txt");
@@ -63,6 +62,7 @@ Search_engine::Search_engine(){
             cerr << "Issue opeing book.txt" << endl;
         }
         while ( getline(btxt, line) ) {
+                string token, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10;
                 int count = 0;
                 istringstream iss(line);
                 while(getline(iss, token, '|')) {
@@ -96,7 +96,10 @@ Search_engine::Search_engine(){
                                         arg9 = token;
                                         break;
                                 case 10:
+                                        getline(iss, token, '\n');
                                         arg10 = token;
+                                        break;
+                                default:
                                         break;
                         }//switch
                 }//in-while
@@ -112,6 +115,7 @@ Search_engine::Search_engine(){
             cerr << "Issue opeing film.txt" << endl;
         }
         while ( getline(ftxt, line) ) {
+                string token, arg1, arg2, arg3, arg4, arg5, arg6;
                 int count = 0;
                 istringstream iss(line);
                 while(getline(iss, token, '|')) {
@@ -132,7 +136,10 @@ Search_engine::Search_engine(){
                                         arg5 = token;
                                         break;
                                 case 6:
+                                        getline(iss, token, '\n');
                                         arg6 = token;
+                                        break;
+                                default:
                                         break;
                         }//switch
                 }//in-while
@@ -148,6 +155,7 @@ Search_engine::Search_engine(){
             cerr << "Issue opeing video.txt" << endl;
         }
         while ( getline(vtxt, line) ) {
+                string token, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8;
                 int count = 0;
                 istringstream iss(line);
                 while(getline(iss, token, '|')) {
@@ -174,7 +182,10 @@ Search_engine::Search_engine(){
                                         arg7 = token;
                                         break;
                                 case 8:
+                                        getline(iss, token, '\n');
                                         arg8 = token;
+                                        break;
+                                default:
                                         break;
 
                         }//switch
@@ -191,6 +202,7 @@ Search_engine::Search_engine(){
             cerr << "Issue opeing periodic.txt" << endl;
         }
         while ( getline(ptxt, line) ) {
+                string token, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12;
                 int count = 0;
                 istringstream iss(line);
                 while(getline(iss, token, '|')) {
@@ -230,7 +242,10 @@ Search_engine::Search_engine(){
                                         arg11 = token;
                                         break;
                                 case 12:
+                                        getline(iss, token, '\n');
                                         arg12 = token;
+                                        break;
+                                default:
                                         break;
                         }//switch
                 }//in-while

@@ -10,22 +10,24 @@ Film::Film(const string &s1, const string &s2, const string &s3,
 
 void Film::display() const {
 
-        cout << "============================" << endl;
-        cout << "=========== FILM ===========" << endl;
-        cout << "============================" << endl;
+        cout << "==========================" << endl;
+        cout << "========== FILM ==========" << endl;
+        cout << "==========================" << endl;
         cout << left;
-        cout << setw(20) << "call number: " << setw(20) << call_number << endl;
-        cout << setw(20) << "title: " << setw(20) << title << endl;
-        cout << setw(20) << "subjects: " << setw(20) << subjects << endl;
-        cout << setw(20) << "director: " << setw(20) << director << endl;
-        cout << setw(20) << "notes: " << setw(20) << notes << endl;
-        cout << setw(20) << "year: " << setw(20) << year << endl;
+        cout << setw(22) << "call_number: "  << call_number << endl;
+        cout << setw(22) << "title: " <<  title << endl;
+        cout << setw(22) << "subjects: "  << subjects << endl;
+        cout << setw(22) << "director: "  << director << endl;
+        cout << setw(22) << "notes: " <<  notes << endl;
+        cout << setw(22) << "year: " <<  year << endl;
 
 
 
 }
 bool Film::compare_other(const string& s) const {
-        if(s==director || s==year) {
+        int found_dir = s.find(director);
+        int found_ye = s.find(year);
+        if(found_dir!=string::npos || found_ye!=string::npos ) {
                 return true;
         }
         return false;
